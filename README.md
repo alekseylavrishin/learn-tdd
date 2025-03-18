@@ -49,7 +49,10 @@ should be placed in `tests/authorService.test.ts`.
 
 Briefly explain a limitation of the tests in `tests/authorSchema.test.ts` in the space below.
 
-
+A limitation of the tests in authorSchema.test is that they are too tightly coupled with the Author.countDocuments query.
+Many of the tests use a mock of the countDocuments query, which makes them less than ideal, since any change made to countDocuments
+will break the test and thereby cause it to fail.
+Instead of mocking the countDocuments query, the Author.getAuthorCount method count should be mocked instead.
 
 ## Part 3
 
